@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Thanks for downloading this template!
 
 Template Name: iPortfolio
@@ -13,3 +14,6 @@ Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-
 Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
 >>>>>>> 8f4594193fade22040f122e5f6618912dfbf014f
+=======
+
+>>>>>>> 251f24b392abeea321549284f764547b6b88761e
