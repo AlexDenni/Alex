@@ -1,31 +1,42 @@
 <?php
-  $receiving_email_address = 'alexyesudass1@gmail.com';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-  if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
-    include($php_email_form);
-  } else {
-    die('Unable to load the "PHP Email Form" Library!');
-  }
+// Load PHPMailer classes
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
+require 'src/Exception.php';
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-  $contact->smtp = array(
-    'host' => 'smtp.gmail.com',
-    'username' => 'alexyesudass1@gmail.com',
-    'password' => '', // Replace with App Password
-    'port' => '465',
-    'encryption' => 'ssl'
-  );
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer(true);
 
-  $contact->add_message($_POST['name'], 'From');
-  $contact->add_message($_POST['email'], 'Email');
-  $contact->add_message($_POST['message'], 'Message', 10);
+    try {
+        // SMTP settings for Gmail
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'reilypre@gmail.com'; // Replace with your Gmail address
+        $mail->Password = 'cghb vfaa ksug sfzo';    // Replace with your Gmail App Password
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
 
-  echo $contact->send();
+        // Email details
+        $mail->setFrom($email, $name);           // Sender’s email and name (from the form)
+        $mail->addAddress('reilypre@gmail.com'); // Your Gmail where messages will go
+        $mail->Subject = "New Contact Form Message from $name";
+        $mail->Body = "Name: $name\nEmail: $email\nMessage:\n$message";
+
+        // Send the email
+        $mail->send();
+        echo "Message sent successfully! I’ll get back to you soon.";
+    } catch (Exception $e) {
+        echo "Sorry, there was an error sending your message: " . $mail->ErrorInfo;
+    }
+}
 ?>
