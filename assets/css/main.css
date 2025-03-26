@@ -1,6 +1,3 @@
-/*--------------------------------------------------------------
-
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -78,57 +75,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -142,34 +88,27 @@ h6 {
   bottom: 0;
   padding: 0 15px;
   width: 300px;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent 90%);
-  transform-style: preserve-3d;
-  perspective: 800px;
-  transform: translateZ(0);
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color) 15%, transparent 85%);
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .header .logo {
   line-height: 1;
   margin-bottom: 15px;
-  transform-style: preserve-3d;
-  position: relative;
 }
 
 .header .logo img {
   max-height: 32px;
   margin-right: 8px;
-  transition: all 0.4s ease;
-  transform: translateZ(15px) rotateY(-10deg);
 }
 
 .header .logo h1 {
@@ -179,16 +118,8 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .logo:hover img {
-  transform: translateZ(30px) rotateY(0deg);
-}
-
 .header .social-links {
   margin: 0 0 20px 0;
-  transform-style: preserve-3d;
-  display: flex;
-  gap: 10px; /* Increased from 5px to 10px for a little more spacing */
-  justify-content: center;
 }
 
 .header .social-links a {
@@ -196,43 +127,25 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color) 10%, transparent 90%);
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
+  margin: 0 2px;
   border-radius: 50%;
   text-align: center;
   width: 40px;
   height: 40px;
-  transition: all 0.4s ease;
-  transform: translateZ(15px) rotateX(10deg);
-  position: relative;
+  transition: 0.3s;
 }
 
 .header .social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);
-  transform: translateZ(40px) rotateX(0deg) scale(1.15);
-  box-shadow: 0 0 20px rgba(var(--accent-color-rgb, 100, 100, 255), 0.4);
-}
-
-.header .social-links a::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--accent-color-rgb, 100, 100, 255), 0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-  transform: translateZ(-10px);
-}
-
-.header .social-links a:hover::before {
-  opacity: 1;
 }
 
 @media (min-width: 1200px) {
-  .header ~ main,
-  .header ~ #footer {
+
+  .header~main,
+  .header~#footer {
     margin-left: 300px;
   }
 }
@@ -240,14 +153,11 @@ h6 {
 @media (max-width: 1199px) {
   .header {
     left: -100%;
-    transform: translateX(-100%) translateZ(-100px) rotateY(-60deg);
   }
 }
 
 .header.header-show {
   left: 0;
-  transform: translateX(0) translateZ(0) rotateY(0deg);
-  animation: headerFoldIn 0.6s ease-out forwards;
 }
 
 .header .header-toggle {
@@ -265,32 +175,12 @@ h6 {
   top: 15px;
   right: 15px;
   z-index: 9999;
-  transition: all 0.4s ease;
-  transform: translateZ(20px) rotateZ(0deg);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
 }
 
 .header .header-toggle:hover {
   color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
-  transform: translateZ(50px) rotateZ(360deg);
-  box-shadow: 0 0 25px rgba(var(--accent-color-rgb, 100, 100, 255), 0.5);
-}
-
-/* 3D Animation Keyframes */
-@keyframes headerFoldIn {
-  0% {
-    transform: translateX(-100%) translateZ(-100px) rotateY(-60deg);
-    opacity: 0;
-  }
-  50% {
-    transform: translateX(-20%) translateZ(-20px) rotateY(-15deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(0) translateZ(0) rotateY(0deg);
-    opacity: 1;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -664,7 +554,6 @@ section,
     font-size: 20px;
   }
 }
-
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -694,7 +583,6 @@ section,
   color: var(--accent-color);
   line-height: 0;
 }
-
 
 /*--------------------------------------------------------------
 # Skills Section
@@ -956,58 +844,6 @@ section,
 .services .service-item .description {
   line-height: 24px;
   font-size: 14px;
-}
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-#contact {
-  padding: 20px;
-  text-align: left;
-}
-
-h2 {
-  color: #333;
-  font-size: 28px;
-}
-
-p {
-  color: #666;
-  font-size: 16px;
-  text-align: center;
-}
-
-form {
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-label {
-  font-size: 14px;
-  color: #333;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-button {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 /*--------------------------------------------------------------
