@@ -639,20 +639,27 @@ section,
   position: relative;
 }
 
-.resume .resume-item h4 {
+.resume .resume-item h3 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
-  display: inline-block;
+  line-height: 18px;
+  font-size: 18px;
   font-weight: 600;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
 }
 
