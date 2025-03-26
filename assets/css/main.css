@@ -1,6 +1,5 @@
 /*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
+
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -143,26 +142,20 @@ h6 {
   bottom: 0;
   padding: 0 15px;
   width: 300px;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* More pronounced elastic effect */
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent 90%);
   transform-style: preserve-3d;
   perspective: 800px;
-  transform: translateZ(0); /* Base state for 3D */
+  transform: translateZ(0);
 }
 
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  transition: transform 0.3s ease; /* Keep it subtle */
-  transform: translateZ(10px); /* Slight depth */
-}
-
-.header .profile-img img:hover {
-  transform: translateZ(20px) scale(1.05); /* Minimal 3D pop, no spin */
+  border: 8px solid color-mix(in srgb, var(--default-color) 15%, transparent 85%);
 }
 
 .header .logo {
@@ -184,23 +177,17 @@ h6 {
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
-  transition: all 0.4s ease;
-  transform: translateZ(20px);
 }
 
 .header .logo:hover img {
   transform: translateZ(30px) rotateY(0deg);
 }
 
-.header .logo:hover h1 {
-  transform: translateZ(35px);
-}
-
 .header .social-links {
   margin: 0 0 20px 0;
   transform-style: preserve-3d;
   display: flex;
-  gap: 5px;
+  gap: 10px; /* Increased from 5px to 10px for a little more spacing */
   justify-content: center;
 }
 
@@ -209,7 +196,7 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  background: color-mix(in srgb, var(--default-color) 10%, transparent 90%);
   color: var(--default-color);
   border-radius: 50%;
   text-align: center;
@@ -244,8 +231,8 @@ h6 {
 }
 
 @media (min-width: 1200px) {
-  .header~main,
-  .header~#footer {
+  .header ~ main,
+  .header ~ #footer {
     margin-left: 300px;
   }
 }
@@ -253,7 +240,7 @@ h6 {
 @media (max-width: 1199px) {
   .header {
     left: -100%;
-    transform: translateX(-100%) translateZ(-100px) rotateY(-60deg); /* 3D fold out */
+    transform: translateX(-100%) translateZ(-100px) rotateY(-60deg);
   }
 }
 
@@ -286,7 +273,7 @@ h6 {
 .header .header-toggle:hover {
   color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
-  transform: translateZ(50px) rotateZ(360deg); /* Full 3D spin */
+  transform: translateZ(50px) rotateZ(360deg);
   box-shadow: 0 0 25px rgba(var(--accent-color-rgb, 100, 100, 255), 0.5);
 }
 
@@ -303,21 +290,6 @@ h6 {
   100% {
     transform: translateX(0) translateZ(0) rotateY(0deg);
     opacity: 1;
-  }
-}
-
-/* Idle animation for header elements */
-.header .logo,
-.header .social-links {
-  animation: float3D 5s infinite ease-in-out;
-}
-
-@keyframes float3D {
-  0%, 100% {
-    transform: translateZ(0) translateY(0);
-  }
-  50% {
-    transform: translateZ(10px) translateY(-5px);
   }
 }
 

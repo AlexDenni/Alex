@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+  <title>Portfolio Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,65 +26,35 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-
 </head>
 
 <body class="portfolio-details-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
-
     <div class="profile-img">
       <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
     </div>
-
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Alex Smith</h1>
+      <h1 class="sitename">ALEXYESUDASS S</h1>
     </a>
-
     <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
       <a href="www.linkedin.com/in/alexyesudass-s" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="Github"><i class="bi bi-github"></i></a>
+      
+      
     </div>
-
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>  
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+         
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
-
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
@@ -100,14 +70,10 @@
 
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
-
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
@@ -123,71 +89,39 @@
                   }
                 }
               </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/product-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/books-1.jpg" alt="">
-                </div>
-
+              <div class="swiper-wrapper align-items-center" id="project-images">
+                <!-- Images will be dynamically populated -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200" id="project-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: <span id="category"></span></li>
+                <li><strong>Client</strong>: <span id="client"></span></li>
+                <li><strong>Project date</strong>: <span id="date"></span></li>
+                <li><strong>Project URL</strong>: <a id="url" href="#"></a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h2 id="project-title"></h2>
+              <p id="project-description"></p>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </section><!-- /Portfolio Details Section -->
-
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">ALEXYESUDASS S</strong> <span>All Rights Reserved</span></p>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -211,6 +145,113 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- Custom Script for Dynamic Portfolio Details -->
+  <script>
+    // Project data based on the previous portfolio section
+    const projects = {
+      "app-1": {
+        title: "App 1",
+        category: "App",
+        client: "ASU Company",
+        date: "01 March, 2020",
+        url: "www.example.com/app1",
+        description: "Lorem ipsum, dolor sit amet consectetur adipiscing elit. This app showcases innovative design and functionality.",
+        images: ["assets/img/portfolio/app-1.jpg"]
+      },
+      "app-2": {
+        title: "App 2",
+        category: "App",
+        client: "XYZ Corp",
+        date: "15 April, 2021",
+        url: "www.example.com/app2",
+        description: "A mobile application with a focus on user experience and seamless performance.",
+        images: ["assets/img/portfolio/app-2.jpg"]
+      },
+      "product-1": {
+        title: "Product 1",
+        category: "UI/UX Designs",
+        client: "Design Co.",
+        date: "10 June, 2020",
+        url: "www.example.com/product1",
+        description: "A UI/UX design project emphasizing intuitive navigation and aesthetics.",
+        images: ["assets/img/portfolio/product-1.jpg"]
+      },
+      "product-2": {
+        title: "Product 2",
+        category: "UI/UX Designs",
+        client: "Tech Innovations",
+        date: "20 August, 2021",
+        url: "www.example.com/product2",
+        description: "An advanced UI/UX solution for a cutting-edge product.",
+        images: ["assets/img/portfolio/product-2.jpg"]
+      },
+      "branding-1": {
+        title: "Branding 1",
+        category: "Graphic Design",
+        client: "Brandify",
+        date: "05 January, 2020",
+        url: "www.example.com/branding1",
+        description: "A branding project that reflects a strong visual identity.",
+        images: ["assets/img/portfolio/branding-1.jpg"]
+      },
+      "branding-2": {
+        title: "Branding 2",
+        category: "Graphic Design",
+        client: "Creative Minds",
+        date: "12 September, 2021",
+        url: "www.example.com/branding2",
+        description: "Graphic design work that elevates brand recognition.",
+        images: ["assets/img/portfolio/branding-2.jpg"]
+      }
+    };
+
+    // Function to load project details
+    function loadProjectDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get("project");
+
+      // Debugging: Log the project ID to the console
+      console.log("Project ID from URL:", projectId);
+
+      if (projectId && projects[projectId]) {
+        const project = projects[projectId];
+
+        // Update project info
+        document.getElementById("category").textContent = project.category;
+        document.getElementById("client").textContent = project.client;
+        document.getElementById("date").textContent = project.date;
+        document.getElementById("url").textContent = project.url;
+        document.getElementById("url").href = `https://${project.url}`;
+        document.getElementById("project-title").textContent = project.title;
+        document.getElementById("project-description").textContent = project.description;
+
+        // Update Swiper images
+        const swiperWrapper = document.getElementById("project-images");
+        swiperWrapper.innerHTML = "";
+        project.images.forEach(image => {
+          const slide = document.createElement("div");
+          slide.className = "swiper-slide";
+          slide.innerHTML = `<img src="${image}" alt="${project.title}">`;
+          swiperWrapper.appendChild(slide);
+        });
+
+        // Reinitialize Swiper after updating slides
+        try {
+          new Swiper(".portfolio-details-slider", JSON.parse(document.querySelector(".swiper-config").textContent));
+        } catch (error) {
+          console.error("Error initializing Swiper:", error);
+        }
+      } else {
+        // Fallback if no valid project is found
+        console.warn("Invalid or missing project ID. Available projects:", Object.keys(projects));
+        document.getElementById("project-title").textContent = "Project Not Found";
+        document.getElementById("project-description").textContent = "Please select a valid project from the portfolio.";
+      }
+    }
+
+    // Load project details when the page loads
+    window.addEventListener("load", loadProjectDetails);
+  </script>
 </body>
 
 </html>
